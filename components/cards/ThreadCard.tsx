@@ -102,17 +102,27 @@ function ThreadCard({
                   className='cursor-pointer object-contain'
                 />
               </div>
+              {/* <p className="mt-1 text-subtle-medium text-gray-1">
+              {formatDateString(createdAt)}
+            </p> */}
 
               {isComment && comments.length > 0 && (
                 <Link href={`/thread/${id}`}>
                   <p className='mt-1 text-subtle-medium text-gray-1'>
                     {comments.length} repl{comments.length > 1 ? "ies" : "y"}
                   </p>
+                  
                 </Link>
+                
               )}
             </div>
           </div>
         </div>
+        </div>
+        <div className="mt-5 flex items-center">
+        <p className='text-subtle-medium text-gray-1'>
+            {formatDateString(createdAt)}
+          </p>
 
         {/* <DeleteThread
           threadId={JSON.stringify(id)}
@@ -141,6 +151,7 @@ function ThreadCard({
               {comments.length} repl{comments.length > 1 ? "ies" : "y"}
             </p>
           </Link>
+          
         </div>
       )}
 
@@ -150,8 +161,8 @@ function ThreadCard({
           className='mt-5 flex items-center'
         >
           <p className='text-subtle-medium text-gray-1'>
-            {formatDateString(createdAt)}
-            {community && ` - ${community.name} Community`}
+            
+            {community && ` ${community.name} Community`}
           </p>
 
           <Image
